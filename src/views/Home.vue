@@ -14,6 +14,7 @@ onMounted(async () => {
 
 <template>
   <div class="memo-list">
+    <!-- 메모를 순회하며 출력 -->
     <router-link
       v-for="m in state.memos"
       :key="m.id"
@@ -23,15 +24,18 @@ onMounted(async () => {
       <div class="d-flex pt-3">
         <div class="pb-3 mb-0 w-100">
           <div class="d-flex justify-content-between">
+            <!-- 메모 제목 -->
             <b>{{ m.title }}</b>
             <div>
-              <span role="" button>삭제</span>
+              <span role="button" button>삭제</span><!--추후 구현-->
             </div>
           </div>
+          <!-- 메모내용 -->
           <div class="mt-2">{{ m.content }}</div>
         </div>
       </div>
     </router-link>
+    <!-- router-link to="" 이경로로 액션이 들어오면 이경로로 들어가지게 한다 -->
     <router-link to="/memos/add" class="add btn btn-light">
       + 추가하기
     </router-link>

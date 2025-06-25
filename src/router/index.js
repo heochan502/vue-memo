@@ -14,6 +14,7 @@ const router = createRouter({
       component: () => import('@/views/Form.vue'),
     },
     {
+      // path 요청이오면 아래의 경로로 연결을 시키겟다
       path: '/memos/:id',
       name: 'memoDetail',
       component: () => import('@/views/Form.vue'),

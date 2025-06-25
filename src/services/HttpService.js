@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// 통신 담당 통신으로는 axios를 쓴다
 export class HttpService {
   addItem(item) {
     axios
@@ -10,6 +10,10 @@ export class HttpService {
 
   async getItems() {
     const result = await axios.get('http://localhost:8080/memo');
+    return result.data;
+  }
+  async getItem(id) {
+    const result = await axios.get(`http://localhost:8080/memo/${id}`);
     return result.data;
   }
 }
